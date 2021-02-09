@@ -38,7 +38,7 @@ export function add(filename, key, input, callback) {
         return;
       }
       // file written successfully
-      console.log('success!');
+      console.log('add success!');
       callback(content, null);
     });
   };
