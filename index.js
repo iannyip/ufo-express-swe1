@@ -26,7 +26,7 @@ app.post('/sighting', (request, res) => {
   });
 })
 
-app.get('/sighting/:index', (request, response) => {
+app.get('/sighting/:index', (request, response) => {  
   console.log('being redirected');
   const index = request.params.index;
   read('data.json', (data, error) =>{
