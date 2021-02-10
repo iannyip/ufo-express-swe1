@@ -32,9 +32,9 @@
             <th scope="col">Date</th>
             <th scope="col">Shape</th>
             <th scope="col">City</th>
-            <th scope="col">More</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
+            <th scope="col" class="text-center">More</th>
+            <th scope="col" class="text-center">Edit</th>
+            <th scope="col" class="text-center">Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -44,9 +44,17 @@
             <td><%= sightings[i].date_time%></td>
             <td><%= sightings[i].shape%></td>
             <td><%= sightings[i].city%></td>
-            <td><a href="/sighting/<%= i%>">Link</a></td>
-            <td><a href="#">Edit</a></td>
-            <td><a href="#">Delete</a></td>
+            <td class="text-center"><a href="/sighting/<%= i%>">
+              <i class="icon-external-link"></i>
+            </a></td>
+            <td class="text-center"><a href="/sighting/<%= i%>/edit">
+              <i class="icon-pencil"></i>
+            </a></td>
+            <td class="text-center">
+              <a href="/sighting/<%= i %>/delete">
+                <i class="icon-trash"></i>
+              </a>
+            </td>
           </tr>
           <% }; %>
         </tbody>

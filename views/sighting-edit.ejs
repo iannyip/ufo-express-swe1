@@ -4,6 +4,7 @@
   
   <body>
     <%- include("partial/navbar") %>
+    
     <div class = "container" style="margin-top:100px">
       <div class="row">
         <div class= "col-md-6">
@@ -11,22 +12,22 @@
           <h3>It's ok if aliens wiped your memory</h3>
         </div>
         <div class = "col-md-6">
-          <form action="/sighting" method="POST">
+          <form action="/sighting/<%= sightingObj.index%>/edit?_method=PUT" method="POST">
             
             <label for="summary">Summary</label><br>
-            <input type="text" id="summary" name="summary" placeholder="Summarize in a sentence." value=<%= sightingObj.summary%>><br>
+            <input type="text" id="summary" name="summary" placeholder="Summarize in a sentence." value="<%= sightingObj.summary%>"><br>
             
             <label for="city">City</label><br>
-            <input type="text" id="city" name="city" value=<%= sightingObj.city%>><br>
+            <input type="text" id="city" name="city" value="<%= sightingObj.city%>"><br>
             
             <label for="">State</label><br>
-            <input type="text" id="state" name="state" value=<%= sightingObj.state%>><br>
+            <input type="text" id="state" name="state" value="<%= sightingObj.state%>"><br>
             
             <label for="date_time">Date-time</label><br>
             <input type="text" id="date_time" name="date_time" placeholder="dd/mm/yy hh/mm" value="<%= sightingObj.date_time%>"><br>
             
             <label for="shape">Shape</label><br>
-            <input type="text" id="shape" name="shape" value=<%= sightingObj.shape%>><br>
+            <input type="text" id="shape" name="shape" value="<%= sightingObj.shape%>"><br>
             
             <label for="duration">Duration</label><br>
             <input type="text" id="duration" name="duration" value= "<%= sightingObj.duration%>"><br>

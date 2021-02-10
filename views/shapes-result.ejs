@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <%- include ("partial/head") %>
+
+  <body>
+    <%- include ("partial/navbar") %>
+
+    <div class="container" style="margin-top:100px">
+      <!-- Header -->
+      <div class="row">
+        <h1><%= shapeObjArr[0].shape %></h1>
+      </div>
+
+      <!-- Table -->
+      <div class="row">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Date</th>
+              <th scope="col">Shape</th>
+              <th scope="col">City</th>
+              <th scope="col" class="text-center">More</th>
+              <th scope="col" class="text-center">Edit</th>
+              <th scope="col" class="text-center">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (let i = 0; i < shapeObjArr.length; i += 1) { %>
+            <tr>
+              <th scope="row"><%= i+1 %></th>
+              <td><%= shapeObjArr[i].date_time%></td>
+              <td><%= shapeObjArr[i].shape%></td>
+              <td><%= shapeObjArr[i].city%></td>
+              <td class="text-center"><a href="/sighting/<%= i%>">
+                <i class="icon-external-link"></i>
+              </a></td>
+              <td class="text-center"><a href="/sighting/<%= i%>/edit">
+                <i class="icon-pencil"></i>
+              </a></td>
+              <td class="text-center">
+                <a href="/sighting/<%= i %>/delete">
+                  <i class="icon-trash"></i>
+                </a>
+              </td>
+            </tr>
+            <% }; %>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+
+    <%- include ("partial/body-js") %>
+  </body>
+</html>

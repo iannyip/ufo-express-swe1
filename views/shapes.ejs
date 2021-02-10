@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <%- include ("partial/head") %>
+
+  <body>
+    <%- include("partial/navbar") %>
+
+    <div class="container" style="margin-top:100px">
+      <div class="row">
+        <h1>Unique UFO shapes</h1>
+      </div>
+      <div class="row">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Shape</th>
+              <th scope="col">Count</th>
+              <th scope="col">Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (const key in shapesObj) { %>
+              <tr>
+                <th scope="row"><%= key %></th>
+                <td><%= shapesObj[key] %></td>
+                <td>
+                  <a href="/shapes/<%= key %>">
+                    <i class="icon-external-link"></i>
+                  </a>
+                </td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <%- include("partial/body-js") %>
+
+  </body>
+</html>
