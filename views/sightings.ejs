@@ -8,28 +8,95 @@
 
     <div class = "container" style="margin-top:100px">
       <div class="row">
-        <div class= "col-md-6">
+        <div class= "col-md-4">
           <h1>Glad you survived!</h1>
           <h3>Tell us about your experience</h3>
         </div>
-        <div class = "col-md-6">
+        <div class = "col-md-8">
           <form action="/sighting" method="POST">
-            <label for="summary">Summary</label><br>
-            <input type="text" id="summary" name="summary" placeholder="Summarize in a sentence."><br>
-            <label for="city">City</label><br>
-            <input type="text" id="city" name="city"><br>
-            <label for="">State</label><br>
-            <input type="text" id="state" name="state"><br>
-            <label for="date_time">Date-time</label><br>
-            <input type="text" id="date_time" name="date_time" placeholder="dd/mm/yy hh/mm"><br>
-            <label for="shape">Shape</label><br>
-            <input type="text" id="shape" name="shape"><br>
-            <label for="duration">Duration</label><br>
-            <input type="text" id="duration" name="duration"><br>
-            <label for="report">Report</label><br>
-            <!-- <input type="text" id="report" name="text" placeholder="type out detailed report"><br><br> -->
-            <textarea name="text" id="report" cols="40" rows="8"></textarea>
-            <input type="submit" value="Submit" class="btn btn-dark">
+            <div class="row form-group">
+              <label for="summary" class="col-md-2 col-form-label">Summary</label>
+              <input type="text" class="col-md-10 form-control" id="summary" name="summary" placeholder="Summarize in a sentence.">
+            </div>
+            <div class="row form-group">
+              <label for="city" class="col-md-2 col-form-label">City</label>
+              <input type="text" class="col-md-10 form-control" id="city" name="city">
+            </div>
+            <div class="row form-group">
+              <label for="state" class="col-md-2 col-form-label">State</label>
+              <!-- <input type="text" class="col-md-10 form-control" id="state" name="state"> -->
+              <select name="state" id="state" class="col-md-10 form-control">
+                <option hidden>Select a state</option>
+                <option>Alabama</option>
+                <option>Alaska</option>
+                <option>Arizona</option>
+                <option>Arkansas</option>
+                <option>California</option>
+                <option>Colorado</option>
+                <option>Connecticut</option>
+                <option>Delaware</option>
+                <option>Florida</option>
+                <option>Georgia</option>
+                <option>Hawaii</option>
+                <option>Idaho</option>
+                <option>Illinois</option>
+                <option>Indiana</option>
+                <option>Iowa</option>
+                <option>Kansas</option>
+                <option>Kentucky</option>
+                <option>Louisiana</option>
+                <option>Maine</option>
+                <option>Maryland</option>
+                <option>Massachusetts</option>
+                <option>Michigan</option>
+                <option>Minnesota</option>
+                <option>Mississippi</option>
+                <option>Missouri</option>
+                <option>Montana</option>
+                <option>Nebraska</option>
+                <option>Nevada</option>
+                <option>New Hampshire</option>
+                <option>New Jersey</option>
+                <option>New Mexico</option>
+                <option>New York</option>
+                <option>North Carolina</option>
+                <option>North Dakota</option>
+                <option>Ohio</option>
+                <option>Oklahoma</option>
+                <option>Oregon</option>
+                <option>Pennsylvania</option>
+                <option>Rhode Island</option>
+                <option>South Carolina</option>
+                <option>South Dakota</option>
+                <option>Tennessee</option>
+                <option>Texas</option>
+                <option>Utah</option>
+                <option>Vermont</option>
+                <option>Virginia</option>
+                <option>Washington</option>
+                <option>West Virginia</option>
+                <option>Wisconsin</option>
+                <option>Wyoming</option>
+              </select>
+            </div>
+            <div class="row form-group">
+              <label for="date_time" class="col-md-2 col-form-label">Date-time</label>
+              <input type="text" class="col-md-10 form-control" id="date_time" name="date_time" placeholder="dd/mm/yy hh:mm">
+            </div>
+            <div class="row form-group">
+              <label for="shape" class="col-md-2 col-form-label">Shape</label>
+              <input type="text" class="col-md-10 form-control" id="shape" name="shape">
+            </div>
+            <div class="row form-group">
+              <label for="duration" class="col-md-2 col-form-label">Duration</label>
+              <input type="text" class="col-md-10 form-control" id="duration" name="duration">
+            </div>
+            <div class="row form-group">
+              <label for="report" class="col-md-2 col-form-label">report</label>
+              <input type="text" class="col-md-10 form-control" id="report" name="text">
+            </div>
+            <input type="hidden" name="submitted" value="<%= Date() %>">
+            <button class="btn btn-sm btn-primary" type="submit">Submit</button>
           </form>
         </div>
       </div>

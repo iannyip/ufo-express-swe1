@@ -12,12 +12,6 @@
           <h1>UFO sightings</h1>
         </div>
       </div>
-
-      <div class="row justify-content-center text-center my-3">
-        <div class="col-8">
-          <a href="#" class="btn btn-dark w-100">Sort drop down</a>
-        </div>
-      </div>
       
       <div class="row justify-content-center text-center my-3">
         <div class="col-8">
@@ -28,10 +22,10 @@
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col"><a href="/?sortIndex=true">#</a></th>
             <th scope="col">Date</th>
             <th scope="col">Shape</th>
-            <th scope="col">City</th>
+            <th scope="col"><a href="/?sortCity=true">City</a></th>
             <th scope="col" class="text-center">More</th>
             <th scope="col" class="text-center">Edit</th>
             <th scope="col" class="text-center">Delete</th>
@@ -40,7 +34,7 @@
         <tbody>
           <% for (let i = 0; i < sightings.length; i += 1) { %>
           <tr>
-            <th scope="row"><%= i+1 %></th>
+            <th scope="row"><%= sightings[i].index %></th>
             <td><%= sightings[i].date_time%></td>
             <td><%= sightings[i].shape%></td>
             <td><%= sightings[i].city%></td>
@@ -51,9 +45,13 @@
               <i class="icon-pencil"></i>
             </a></td>
             <td class="text-center">
-              <a href="/sighting/<%= i %>/delete">
+              <!-- <a href="/sighting/<%= i %>/delete">
                 <i class="icon-trash"></i>
-              </a>
+              </a> -->
+              <form action="/sighting/<%=i%>/delete?_method=DELETE" method="POST">
+                <button class="btn"><i class="icon-trash"></i></button>
+                
+              </form>
             </td>
           </tr>
           <% }; %>
